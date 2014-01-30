@@ -11,12 +11,11 @@
 #include "ofxBox2d.h"
 #include "ofxVoronoi.h"
 
-static int hexColors[4] = {0x31988A, 0xFDB978, 0xFF8340, 0xE8491B};
-
+//static int hexColors[4] = {0x31988A, 0xFDB978, 0xFF8340, 0xE8491B};
+static int hexColors[4] = {0x333333, 0x222222, 0x111111, 0x00000};
 class TextureShape {
   
 public:
-	
 	
 	ofImage    *    texturePtr;
 	ofMesh          mesh;
@@ -28,7 +27,9 @@ public:
 	}
 	void setup(ofxBox2d &world, float cx, float cy, float r, vector<ofVec2f> pts) {
 		
+		//色指定
 		color.setHex(hexColors[(int)ofRandom(4)]);
+
 		
 		mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
 		//ここで、点をつくる。
@@ -48,8 +49,6 @@ public:
 		//ボロノイ図の場合
 		ofLog(OF_LOG_NOTICE, "toga:"+ofToString(pts.size()));
 		ofPushStyle();
-		
-
 		  int nPts = pts.size();
 			for(int i=0; i<nPts; i++) {
 				float n = ofMap(i, 0, nPts-1, 0.0, TWO_PI);
@@ -59,14 +58,15 @@ public:
 				polyShape.addVertex(pts[i].x, pts[i].y);
 				mesh.addTexCoord(ofPoint(0, 0));
 				mesh.addTexCoord(ofPoint(x * scale, y * scale));
+				ofLog(OF_LOG_NOTICE, "OK loop:"+ofToString(i));
 			}
-			polyShape.setPhysics(0.3, 0.5, 0.1);
-			polyShape.create(world.getWorld());
+		ofLog(OF_LOG_NOTICE, "OK 1");
+		polyShape.setPhysics(0.3, 0.5, 0.1);
+		ofLog(OF_LOG_NOTICE, "OK 2");
+		polyShape.create(world.getWorld());
+		ofLog(OF_LOG_NOTICE, "OK 3");
 		ofPopStyle();
-		
-		
-
-		
+		ofLog(OF_LOG_NOTICE, "OK FINAL");
 		
 	}
 	void setTexture(ofImage * texture) {

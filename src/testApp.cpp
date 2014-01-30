@@ -138,14 +138,14 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-	int pointNumber = ofRandom(10, 100);
+	int pointNumber = ofRandom(10, 50);
 	for (int i=0; i<pointNumber; i++) {
 		float theta = ofRandom(0, 2*pi);
 		float amplitude = 100*pow(ofRandom(0, 1), 2);
-		
 		pointVector.push_back(ofPoint(sin(theta)*amplitude+x, cos(theta)*amplitude+y));
 		colorVector.push_back(ofColor(ofRandom(0, 255), ofRandom(0, 255), ofRandom(0, 255)));
 	}
+	generateTheVoronoi();
 }
 
 //--------------------------------------------------------------
