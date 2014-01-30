@@ -21,8 +21,12 @@ public:
 	void windowResized(int w, int h);
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
-	void generateTheVoronoi();	//voronoi
-	
+	//voronoi
+	void generateTheVoronoi();
+	//filter
+	void loadLUT(string path);
+	void applyLUT(ofPixelsRef pix);
+
 	
 	ofxBox2d box2d;
 	
@@ -38,7 +42,18 @@ public:
 	vector <ofColor> colorVector;
 	ofxVoronoi       voronoi;
 	
-	vector<ofMesh> meshVector;
-	
-	
+	//video grabber
+	ofVideoGrabber videoGrabber;
+	int videoGrabberWidth;
+	int videoGrabberHeight;
+	int videoDrawWidth;
+	int videoDrawHeight;
+	//filter
+	bool doLUT;
+	int dirLoadIndex;
+	ofPoint lutPos;
+	ofPoint thumbPos;
+	bool LUTloaded;
+	ofVec3f lut[32][32][32];
+	ofImage lutImg;
 };
