@@ -1,5 +1,23 @@
 #include "testApp.h"
 
+
+//衝突を検知するリスナー MyContactListener の実装
+extern testApp *myApp;
+
+MyContactListener::MyContactListener()
+{
+	mySound.loadSound("tink2.wav");
+	mySound.setMultiPlay(false);
+}
+void MyContactListener::BeginContact(b2Contact* contact){
+	//衝突を検知したら、ランダムなピッチで音を鳴らす
+	mySound.setSpeed(ofRandom(0.5, 2.0));
+	mySound.play();
+}
+
+void MyContactListener::EndContact(b2Contact* contact){
+}
+
 //--------------------------------------------------------------
 void testApp::setup(){
 	ofSetFullscreen(true);
@@ -20,9 +38,13 @@ void testApp::setup(){
 	// Box2d
 	box2d.init();
 	box2d.setGravity(0, 10);
+//	box2d.createGround(0, ofGetHeight()+10, ofGetWidth(), ofGetHeight()+10);
 	box2d.createGround();
+
 	box2d.setFPS(30.0);
 	box2d.registerGrabbing();
+	box2d.enableEvents();
+	box2d.getWorld() -> SetContactListener(&contacts);
 	
 	//voronoi
 	ofEnableSmoothing();
@@ -68,6 +90,10 @@ void testApp::setup(){
 	
 	thumbPos.set(lutImg.getWidth()*0.5f-80, -lutImg.getHeight()*0.5f - 60, 0);
 	lutPos.set(-lutImg.getWidth()*0.5f, -lutImg.getHeight()*0.5f, 0);
+	
+	//expression
+	firstMouseClick = false;
+	secondMouseClick = false;
 }
 
 //--------------------------------------------------------------
@@ -139,16 +165,25 @@ void testApp::draw(){
 	// some debug information
 	string info = "Textures from subtlepatterns.com\n";
 	info += "Press c to clear everything\n";
-		
-	//guideline
+	
+	//expression
 	ofPushStyle();
-	ofSetColor(0, 255, 255);
-	ofDrawBitmapString(info, 10, 15);
-	ofDrawBitmapString("fps   : "+ofToString(ofGetFrameRate()), 10, 50);
-	ofDrawBitmapString("point : "+ofToString(pointVector.size()), 10, 60);
-	ofLine(0, ofGetHeight()/2.0, ofGetWidth(), ofGetHeight()/2.0);
-	ofLine(ofGetWidth()/2.0, 0, ofGetWidth()/2.0, ofGetHeight());
+	ofSetColor(0, 0, 0);
+	if (!firstMouseClick) {
+		ofRect(0, 0, ofGetWidth(), ofGetHeight());
+	}
 	ofPopStyle();
+	
+	//guideline
+//	ofPushStyle();
+//	ofSetColor(0, 255, 255);
+//	ofDrawBitmapString(info, 10, 15);
+//	ofDrawBitmapString("fps   : "+ofToString(ofGetFrameRate()), 10, 50);
+//	ofDrawBitmapString("point : "+ofToString(pointVector.size()), 10, 60);
+//	ofLine(0, ofGetHeight()/2.0, ofGetWidth(), ofGetHeight()/2.0);ｆ
+//	ofLine(ofGetWidth()/2.0, 0, ofGetWidth()/2.0, ofGetHeight());
+//	ofPopStyle();
+	
 }
 
 //--------------------------------------------------------------
@@ -254,19 +289,30 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-	int pointNumber = ofRandom(10, 50);
-	for (int i=0; i<pointNumber; i++) {
-		float theta = ofRandom(0, 2*pi);
-		float amplitude = 100*pow(ofRandom(0, 1), 2);
-		pointVector.push_back(ofPoint(sin(theta)*amplitude+x, cos(theta)*amplitude+y));
-		colorVector.push_back(ofColor(ofRandom(0, 255), ofRandom(0, 255), ofRandom(0, 255)));
+	if(firstMouseClick == true && secondMouseClick == false){
+		playerMouseClick.loadSound("bang.wav");
+		playerMouseClick.play();
+		box2d.createGround(0, ofGetHeight()*2, ofGetWidth(), ofGetHeight()*2);
+		secondMouseClick = true;
 	}
-	generateTheVoronoi();
-	// add some circles every so often
-	for (int i =0; i<voronoi.cells.size(); i++) {
-		shapes.push_back(ofPtr<TextureShape>(new TextureShape));
-		shapes.back().get()->setTexture(&textures[(int)ofRandom(textures.size())]);
-		shapes.back().get()->setup(box2d, (ofGetWidth()/2)+ofRandom(-20, 20), 130, ofRandom(10, 50), voronoi.cells[i].pts);
+	if (!firstMouseClick) {
+		firstMouseClick = true;
+		int pointNumber = ofRandom(10, 50);
+		for (int i=0; i<pointNumber; i++) {
+			float theta = ofRandom(0, 2*pi);
+			float amplitude = 100*pow(ofRandom(0, 1), 2);
+			pointVector.push_back(ofPoint(sin(theta)*amplitude+x, cos(theta)*amplitude+y));
+			colorVector.push_back(ofColor(ofRandom(0, 255), ofRandom(0, 255), ofRandom(0, 255)));
+		}
+		generateTheVoronoi();
+		// add some circles every so often
+		for (int i =0; i<voronoi.cells.size(); i++) {
+			shapes.push_back(ofPtr<TextureShape>(new TextureShape));
+			shapes.back().get()->setTexture(&textures[(int)ofRandom(textures.size())]);
+			shapes.back().get()->setup(box2d, (ofGetWidth()/2)+ofRandom(-20, 20), 130, ofRandom(10, 50), voronoi.cells[i].pts);
+		}
+		playerMouseClick.loadSound("bang.wav");
+		playerMouseClick.play();
 	}
 }
 

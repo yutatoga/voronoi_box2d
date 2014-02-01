@@ -5,6 +5,18 @@
 #include "TextureShape.h"
 #include "ofxVoronoi.h"
 
+//衝突を検出するためのリスナーのクラス
+class MyContactListener : public b2ContactListener {
+	
+public:
+	MyContactListener();
+	void BeginContact(b2Contact* contact);
+	void EndContact(b2Contact* contact);
+	
+	ofSoundPlayer mySound;
+};
+
+
 class testApp : public ofBaseApp{
 	
 public:
@@ -56,4 +68,11 @@ public:
 	bool LUTloaded;
 	ofVec3f lut[32][32][32];
 	ofImage lutImg;
+	
+	//sound
+	MyContactListener contacts; //衝突感知のリスナー
+	ofSoundPlayer playerMouseClick;
+	
+	bool firstMouseClick;
+	bool secondMouseClick;
 };
