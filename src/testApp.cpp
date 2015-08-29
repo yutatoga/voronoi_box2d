@@ -56,7 +56,7 @@ void testApp::setup(){
 	
 	generateTheVoronoi();
 	
-	ofEnablePointSprites();
+	// ofEnablePointSprites(); FIXME: not working ?? 
 	
 	//video grabber
 	videoGrabberWidth = 240;

@@ -38,9 +38,6 @@
 		7E1AAAB7A2F92465251AE49E /* b2PolygonAndCircleContact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 804B4F86C3DAA1E51794D893 /* b2PolygonAndCircleContact.cpp */; };
 		87C5C3DED336B7BB4A5D06D6 /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B4A3E366385F8EEECD61 /* b2WeldJoint.cpp */; };
 		89F31F234274A62F3501E2EE /* b2Draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B868B25E5784F27CBC75D45 /* b2Draw.cpp */; };
-		8DD6720B189A97E80039C3E7 /* libvoro++_2d32.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD671FF189A97E80039C3E7 /* libvoro++_2d32.a */; };
-		8DD6720C189A97E80039C3E7 /* Voronoi2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DD67206189A97E80039C3E7 /* Voronoi2D.cpp */; };
-		8DD6720D189A97E80039C3E7 /* ofxVoronoi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DD67209189A97E80039C3E7 /* ofxVoronoi.cpp */; };
 		981EA7C2357295AE8501F4C6 /* b2PolygonShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC3FCAE32B28B52708484DC5 /* b2PolygonShape.cpp */; };
 		9D0AA091FE805EB564CD05D0 /* b2RopeJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF1A6A7D5CD5468B3F846A62 /* b2RopeJoint.cpp */; };
 		9F9D49CFC30BA1589822E7AB /* b2PulleyJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEED18744D2E82C919D7D152 /* b2PulleyJoint.cpp */; };
@@ -52,6 +49,9 @@
 		AE9254BC31C3409899D28DC9 /* ofxBox2dCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 722C442E9D47334908C97A13 /* ofxBox2dCircle.cpp */; };
 		B103DF2084E0F38D03E0E6F1 /* ofxBox2dRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2613E67C51FDE6F55873E38 /* ofxBox2dRect.cpp */; };
 		B16C89D9CA996CA8FD860D81 /* ofxBox2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 229CB9C8AF92D3460F8D554A /* ofxBox2d.cpp */; };
+		B2000FE21B92183F0046897D /* ofxVoronoi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2000FCD1B92183F0046897D /* ofxVoronoi.cpp */; };
+		B2000FE31B92183F0046897D /* libvoro++_2d32.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2000FD91B92183F0046897D /* libvoro++_2d32.a */; };
+		B2000FE41B92183F0046897D /* Voronoi2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2000FE01B92183F0046897D /* Voronoi2D.cpp */; };
 		BB885F5F39C8DA070D80EF02 /* b2BlockAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76D962905D0BA4DE02320A5 /* b2BlockAllocator.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		BFD2A0EEBE3B4153659EC355 /* b2Contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBCA857DA9C5F92BF720A6C8 /* b2Contact.cpp */; };
@@ -177,23 +177,6 @@
 		8C78F1BC97D419A7C064143D /* b2CircleShape.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2CircleShape.h; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/Shapes/b2CircleShape.h; sourceTree = SOURCE_ROOT; };
 		8D1FC15F5941283F4A9E70D3 /* b2PrismaticJoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2PrismaticJoint.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2PrismaticJoint.h; sourceTree = SOURCE_ROOT; };
 		8DD670C4189A96320039C3E7 /* TextureShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureShape.h; sourceTree = "<group>"; };
-		8DD671F8189A97E80039C3E7 /* c_loops_2d.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = c_loops_2d.hh; sourceTree = "<group>"; };
-		8DD671F9189A97E80039C3E7 /* cell_2d.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cell_2d.hh; sourceTree = "<group>"; };
-		8DD671FA189A97E80039C3E7 /* cell_nc_2d.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cell_nc_2d.hh; sourceTree = "<group>"; };
-		8DD671FB189A97E80039C3E7 /* common.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = common.hh; sourceTree = "<group>"; };
-		8DD671FC189A97E80039C3E7 /* config.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = config.hh; sourceTree = "<group>"; };
-		8DD671FD189A97E80039C3E7 /* container_2d.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = container_2d.hh; sourceTree = "<group>"; };
-		8DD671FE189A97E80039C3E7 /* ctr_boundary_2d.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ctr_boundary_2d.hh; sourceTree = "<group>"; };
-		8DD671FF189A97E80039C3E7 /* libvoro++_2d32.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libvoro++_2d32.a"; sourceTree = "<group>"; };
-		8DD67200189A97E80039C3E7 /* rad_option.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rad_option.hh; sourceTree = "<group>"; };
-		8DD67201189A97E80039C3E7 /* v_base_2d.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = v_base_2d.hh; sourceTree = "<group>"; };
-		8DD67202189A97E80039C3E7 /* v_compute_2d.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = v_compute_2d.hh; sourceTree = "<group>"; };
-		8DD67203189A97E80039C3E7 /* wall_2d.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = wall_2d.hh; sourceTree = "<group>"; };
-		8DD67204189A97E80039C3E7 /* worklist_2d.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = worklist_2d.hh; sourceTree = "<group>"; };
-		8DD67206189A97E80039C3E7 /* Voronoi2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Voronoi2D.cpp; sourceTree = "<group>"; };
-		8DD67207189A97E80039C3E7 /* Voronoi2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voronoi2D.h; sourceTree = "<group>"; };
-		8DD67209189A97E80039C3E7 /* ofxVoronoi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxVoronoi.cpp; sourceTree = "<group>"; };
-		8DD6720A189A97E80039C3E7 /* ofxVoronoi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxVoronoi.h; sourceTree = "<group>"; };
 		8FCE85CD7CE653733B1C4438 /* b2EdgeAndCircleContact.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2EdgeAndCircleContact.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.h; sourceTree = SOURCE_ROOT; };
 		920CFC6D7E43EED2B7B03746 /* b2StackAllocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2StackAllocator.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Common/b2StackAllocator.cpp; sourceTree = SOURCE_ROOT; };
 		930EB8BAAA6A962411EC197D /* b2GearJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2GearJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2GearJoint.cpp; sourceTree = SOURCE_ROOT; };
@@ -210,6 +193,23 @@
 		A76D962905D0BA4DE02320A5 /* b2BlockAllocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2BlockAllocator.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Common/b2BlockAllocator.cpp; sourceTree = SOURCE_ROOT; };
 		AE658CDA5AA6288D4B5F376D /* b2ChainShape.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2ChainShape.h; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/Shapes/b2ChainShape.h; sourceTree = SOURCE_ROOT; };
 		AF1A6A7D5CD5468B3F846A62 /* b2RopeJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2RopeJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2RopeJoint.cpp; sourceTree = SOURCE_ROOT; };
+		B2000FCD1B92183F0046897D /* ofxVoronoi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxVoronoi.cpp; sourceTree = "<group>"; };
+		B2000FCE1B92183F0046897D /* ofxVoronoi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxVoronoi.h; sourceTree = "<group>"; };
+		B2000FD21B92183F0046897D /* c_loops_2d.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = c_loops_2d.hh; sourceTree = "<group>"; };
+		B2000FD31B92183F0046897D /* cell_2d.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = cell_2d.hh; sourceTree = "<group>"; };
+		B2000FD41B92183F0046897D /* cell_nc_2d.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = cell_nc_2d.hh; sourceTree = "<group>"; };
+		B2000FD51B92183F0046897D /* common.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = common.hh; sourceTree = "<group>"; };
+		B2000FD61B92183F0046897D /* config.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = config.hh; sourceTree = "<group>"; };
+		B2000FD71B92183F0046897D /* container_2d.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = container_2d.hh; sourceTree = "<group>"; };
+		B2000FD81B92183F0046897D /* ctr_boundary_2d.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ctr_boundary_2d.hh; sourceTree = "<group>"; };
+		B2000FD91B92183F0046897D /* libvoro++_2d32.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libvoro++_2d32.a"; sourceTree = "<group>"; };
+		B2000FDA1B92183F0046897D /* rad_option.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rad_option.hh; sourceTree = "<group>"; };
+		B2000FDB1B92183F0046897D /* v_base_2d.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = v_base_2d.hh; sourceTree = "<group>"; };
+		B2000FDC1B92183F0046897D /* v_compute_2d.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = v_compute_2d.hh; sourceTree = "<group>"; };
+		B2000FDD1B92183F0046897D /* wall_2d.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = wall_2d.hh; sourceTree = "<group>"; };
+		B2000FDE1B92183F0046897D /* worklist_2d.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = worklist_2d.hh; sourceTree = "<group>"; };
+		B2000FE01B92183F0046897D /* Voronoi2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Voronoi2D.cpp; sourceTree = "<group>"; };
+		B2000FE11B92183F0046897D /* Voronoi2D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Voronoi2D.h; sourceTree = "<group>"; };
 		B4BB2D6A3717A8F7F88D52CD /* b2MotorJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2MotorJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2MotorJoint.cpp; sourceTree = SOURCE_ROOT; };
 		B75D46D6B41E78DF2B519A18 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2BroadPhase.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/b2BroadPhase.cpp; sourceTree = SOURCE_ROOT; };
 		BB9ACE76F509B35222388D94 /* b2ChainAndCircleContact.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2ChainAndCircleContact.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.h; sourceTree = SOURCE_ROOT; };
@@ -283,7 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD6720B189A97E80039C3E7 /* libvoro++_2d32.a in Frameworks */,
+				B2000FE31B92183F0046897D /* libvoro++_2d32.a in Frameworks */,
 				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
 				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
@@ -412,70 +412,6 @@
 			name = Joints;
 			sourceTree = "<group>";
 		};
-		8DD671F4189A97E80039C3E7 /* ofxVoronoi */ = {
-			isa = PBXGroup;
-			children = (
-				8DD671F5189A97E80039C3E7 /* lib */,
-				8DD67208189A97E80039C3E7 /* src */,
-			);
-			path = ofxVoronoi;
-			sourceTree = "<group>";
-		};
-		8DD671F5189A97E80039C3E7 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				8DD671F6189A97E80039C3E7 /* Voronoi */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		8DD671F6189A97E80039C3E7 /* Voronoi */ = {
-			isa = PBXGroup;
-			children = (
-				8DD671F7189A97E80039C3E7 /* lib */,
-				8DD67205189A97E80039C3E7 /* src */,
-			);
-			path = Voronoi;
-			sourceTree = "<group>";
-		};
-		8DD671F7189A97E80039C3E7 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				8DD671F8189A97E80039C3E7 /* c_loops_2d.hh */,
-				8DD671F9189A97E80039C3E7 /* cell_2d.hh */,
-				8DD671FA189A97E80039C3E7 /* cell_nc_2d.hh */,
-				8DD671FB189A97E80039C3E7 /* common.hh */,
-				8DD671FC189A97E80039C3E7 /* config.hh */,
-				8DD671FD189A97E80039C3E7 /* container_2d.hh */,
-				8DD671FE189A97E80039C3E7 /* ctr_boundary_2d.hh */,
-				8DD671FF189A97E80039C3E7 /* libvoro++_2d32.a */,
-				8DD67200189A97E80039C3E7 /* rad_option.hh */,
-				8DD67201189A97E80039C3E7 /* v_base_2d.hh */,
-				8DD67202189A97E80039C3E7 /* v_compute_2d.hh */,
-				8DD67203189A97E80039C3E7 /* wall_2d.hh */,
-				8DD67204189A97E80039C3E7 /* worklist_2d.hh */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		8DD67205189A97E80039C3E7 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				8DD67206189A97E80039C3E7 /* Voronoi2D.cpp */,
-				8DD67207189A97E80039C3E7 /* Voronoi2D.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		8DD67208189A97E80039C3E7 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				8DD67209189A97E80039C3E7 /* ofxVoronoi.cpp */,
-				8DD6720A189A97E80039C3E7 /* ofxVoronoi.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		9618C0A0C8712E53CEDB090C /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +450,72 @@
 			name = triangle;
 			sourceTree = "<group>";
 		};
+		B2000FCB1B92183F0046897D /* ofxVoronoi */ = {
+			isa = PBXGroup;
+			children = (
+				B2000FCC1B92183F0046897D /* src */,
+				B2000FCF1B92183F0046897D /* lib */,
+			);
+			name = ofxVoronoi;
+			sourceTree = "<group>";
+		};
+		B2000FCC1B92183F0046897D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B2000FCD1B92183F0046897D /* ofxVoronoi.cpp */,
+				B2000FCE1B92183F0046897D /* ofxVoronoi.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxVoronoi/src;
+			sourceTree = "<group>";
+		};
+		B2000FCF1B92183F0046897D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B2000FD01B92183F0046897D /* Voronoi */,
+			);
+			name = lib;
+			path = ../../../addons/ofxVoronoi/lib;
+			sourceTree = "<group>";
+		};
+		B2000FD01B92183F0046897D /* Voronoi */ = {
+			isa = PBXGroup;
+			children = (
+				B2000FD11B92183F0046897D /* lib */,
+				B2000FDF1B92183F0046897D /* src */,
+			);
+			path = Voronoi;
+			sourceTree = "<group>";
+		};
+		B2000FD11B92183F0046897D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B2000FD21B92183F0046897D /* c_loops_2d.hh */,
+				B2000FD31B92183F0046897D /* cell_2d.hh */,
+				B2000FD41B92183F0046897D /* cell_nc_2d.hh */,
+				B2000FD51B92183F0046897D /* common.hh */,
+				B2000FD61B92183F0046897D /* config.hh */,
+				B2000FD71B92183F0046897D /* container_2d.hh */,
+				B2000FD81B92183F0046897D /* ctr_boundary_2d.hh */,
+				B2000FD91B92183F0046897D /* libvoro++_2d32.a */,
+				B2000FDA1B92183F0046897D /* rad_option.hh */,
+				B2000FDB1B92183F0046897D /* v_base_2d.hh */,
+				B2000FDC1B92183F0046897D /* v_compute_2d.hh */,
+				B2000FDD1B92183F0046897D /* wall_2d.hh */,
+				B2000FDE1B92183F0046897D /* worklist_2d.hh */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B2000FDF1B92183F0046897D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B2000FE01B92183F0046897D /* Voronoi2D.cpp */,
+				B2000FE11B92183F0046897D /* Voronoi2D.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		B950FBF3AE43D9EE9BC61FF5 /* Dynamics */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,8 +541,8 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				8DD671F4189A97E80039C3E7 /* ofxVoronoi */,
 				BD1B24C549BFA7D54BC59DE3 /* ofxBox2d */,
+				B2000FCB1B92183F0046897D /* ofxVoronoi */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -769,6 +771,7 @@
 				DFACEC3A1E9D23315321D7EA /* ofxBox2dPolygon.cpp in Sources */,
 				B103DF2084E0F38D03E0E6F1 /* ofxBox2dRect.cpp in Sources */,
 				1B19FD7E51B73109C4AC02D9 /* b2BroadPhase.cpp in Sources */,
+				B2000FE41B92183F0046897D /* Voronoi2D.cpp in Sources */,
 				2F666321514A2075B12CE4EE /* b2CollideCircle.cpp in Sources */,
 				F387370DB571155BC1282B7D /* b2CollideEdge.cpp in Sources */,
 				298EAD2C029D9959F5B32246 /* b2CollidePolygon.cpp in Sources */,
@@ -790,9 +793,8 @@
 				C3D8EF14A387EA959014AD91 /* b2ContactManager.cpp in Sources */,
 				FA7300BAC71DAC1ABAF6EE15 /* b2Fixture.cpp in Sources */,
 				6FCE95D2EF10ACCEC2724688 /* b2Island.cpp in Sources */,
-				8DD6720C189A97E80039C3E7 /* Voronoi2D.cpp in Sources */,
-				8DD6720D189A97E80039C3E7 /* ofxVoronoi.cpp in Sources */,
 				AC527216645D66921FB3E36F /* b2World.cpp in Sources */,
+				B2000FE21B92183F0046897D /* ofxVoronoi.cpp in Sources */,
 				5146AEB9E58FB1B388820C2A /* b2WorldCallbacks.cpp in Sources */,
 				1FC2864D958F177964A20421 /* b2ChainAndCircleContact.cpp in Sources */,
 				39303C5BE86B7B4AD0770567 /* b2ChainAndPolygonContact.cpp in Sources */,
@@ -1002,8 +1004,10 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
 					/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/voronoi_box2d/ofxVoronoi/addon/ofxVoronoi/lib/Voronoi/lib,
 					/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/voronoi_box2d/ofxVoronoi/lib/Voronoi/lib,
+					"/Users/yuta-toga/Programs/of/of_v0.8.4_osx_release_3_check/addons/ofxVoronoi/lib/Voronoi/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1089,8 +1093,10 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 					/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/voronoi_box2d/ofxVoronoi/addon/ofxVoronoi/lib/Voronoi/lib,
 					/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/voronoi_box2d/ofxVoronoi/lib/Voronoi/lib,
+					"/Users/yuta-toga/Programs/of/of_v0.8.4_osx_release_3_check/addons/ofxVoronoi/lib/Voronoi/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
